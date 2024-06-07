@@ -7,12 +7,25 @@
 
 </template>
 
+<script>
+
+export default {
+    name: "Footer"
+}
+
+</script>
+
 
 <style scoped>
     footer {
         position: fixed;
         display: flex;
         justify-content: center;
-
+        bottom: 0;
+        background: black;
+        width: 100%;
+    }
+    footer .footer-bar p{
+        color: white;
     }
 </style>

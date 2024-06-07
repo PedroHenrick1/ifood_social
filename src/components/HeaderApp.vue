@@ -3,6 +3,7 @@
         <div class="nav-bar">
             <p>logo</p>
             <ul>
+                <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/login">Login</RouterLink>
                 <RouterLink to="/">Cadastro</RouterLink>
                 <RouterLink to="/">Contato</RouterLink>

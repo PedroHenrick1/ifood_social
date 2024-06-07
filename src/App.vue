@@ -1,12 +1,11 @@
 <script setup>
 import HeaderApp from './components/HeaderApp.vue'
 import FooterApp from './components/FooterApp.vue'
-import HomeApp from './components/HomeApp.vue'
 </script>
 
 <template>
   <HeaderApp/>
-  <HomeApp/>
+  <RouterView/>
   <FooterApp/>
 </template>
 
