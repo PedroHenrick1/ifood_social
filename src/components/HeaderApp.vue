@@ -30,7 +30,7 @@
     header .nav-bar ul a{
         color: white;
         text-decoration: none;
-        transition: white 0.3ms ease-in-out;
+        transition: 0.3s ease-in-out;
     }
 
     header .nav-bar ul a:hover {
