@@ -1,12 +1,26 @@
 <script setup>
 import HeaderApp from './components/HeaderApp.vue'
 import FooterApp from './components/FooterApp.vue'
+import NavBarPrincipal from './components/NavBarPrincipal.vue'
 </script>
 
 <template>
-  <HeaderApp/>
-  <RouterView/>
-  <FooterApp/>
+    <div id="app">
+        <header>
+            <nav v-if="$route.path !== '/' ">
+                <NavBarPrincipal/>
+                
+            </nav>
+            <nav v-if="$route.path !== '/principal' ">
+                <HeaderApp/>
+            </nav>
+
+            
+        </header> 
+        <RouterView/>
+        <FooterApp/>
+    </div>
+
 </template>
 
 <style scoped>
