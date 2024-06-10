@@ -35,10 +35,4 @@ import NavBarPrincipal from './components/NavBarPrincipal.vue'
         font-style: normal;
     }
 
-    html {
-        width: 100vw;
-        height: 100vh;
-        box-sizing: border-box;
-    }
-
 </style>

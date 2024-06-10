@@ -35,8 +35,6 @@
         text-decoration: underline;
     }
 
-
-
     header .nav-bar ul{
         display: flex;
         margin-right: 20px;

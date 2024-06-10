@@ -28,17 +28,30 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
             </nav>
             <div>
                 <h3>Meus Produtos</h3>
-                <div>
+                <div class="produtos-content">
                     <div class="produtos">
-                        <div><img src="../assets/comida.webp" alt="comida"></div>
-                        <div><img src="../assets/comida.webp" alt="comida"></div>
-                        <div><img src="../assets/comida.webp" alt="comida"></div>
-                        <div><img src="../assets/comida.webp" alt="comida"></div>
-                        <div><img src="../assets/comida.webp" alt="comida"></div>
+                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
+                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
+                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
+                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
+                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
                     </div>
+
+                    <select name="select" id="seus-produtos">
+                        <option value="" selected>Seus produtos</option>
+                        <option value="produto1">produto1</option>
+                        <option value="produto2">produto2</option>
+                        <option value="produto3">produto3</option>
+                    </select>
                 </div>
 
+                <div class="buttons">
+                    <RouterLink to="#"><button type="button">Registrar Produto</button></RouterLink>
+                    <RouterLink to="#"><button type="button">Editar Produto</button></RouterLink>
+                </div>
             </div>
+
+            <hr>
 
         </div>
         
@@ -54,6 +67,14 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
     
 
 <style scoped>
+
+    * {
+        font-size: 25px;
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+    }
     .container {
         display: flex;
         justify-content: center;
@@ -80,7 +101,7 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         align-items: center;
     }
     nav .logo h1{
-        font-size: 40px;
+        font-size: 50px;
         text-decoration: underline;
     }
     nav .logo img {
@@ -119,6 +140,12 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         gap: 20px;
     }
 
+    h3 {
+        margin-left: 90px;
+        font-size: 30px;
+        color: white;
+    }
+
     .produtos {
         display: flex;
         flex-direction: row;
@@ -131,6 +158,52 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         height: 100px;
         border-radius: 100px; 
 
+    }
+
+    .produtos-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produtos-content select {
+        width: 75%;
+        height: 40px;
+        margin-top: 60px;
+        background: #d9d9db;
+        color: #6e6e7a;
+        border-radius: 10px;
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin-top: 100px;
+    }
+
+    .buttons button {
+        color: white;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        border: none;
+        background: rgba(75, 31, 154, 1);
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+
+    .buttons button:hover {
+        background: #d9d9db;
+        color: black;
+    }
+
+    hr {
+        margin-top: 60px;
+        width: 75%;
     }
 
 </style>
