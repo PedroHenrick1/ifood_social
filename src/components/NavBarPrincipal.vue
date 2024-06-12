@@ -1,11 +1,17 @@
 <template>
     <header>
         <div class="nav-bar">
-            <p>logo</p>
-            <ul>
-                <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/">Sair</RouterLink>
-            </ul>
+            <div class="logo">
+                <img src="/src/assets/image 47.png" alt="logo">
+                <p>Ifood_Social</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    <RouterLink to="/">Home</RouterLink>
+                    <RouterLink to="/">Sair</RouterLink>
+                </ul>
+                <img src="/src/assets/menu-navigation.svg" alt="menu">
+            </div>
         </div>
     </header>
 </template>
@@ -23,6 +29,31 @@
         justify-content: space-between;
         height: 75px;
         background: black;
+        padding: 0 20px;
+    }
+
+    header .nav-bar .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 11px;
+    }
+
+    header .nav-bar .logo img{
+        width: 40px;
+        cursor: pointer;
+    }
+
+    header .nav-bar .menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    header .nav-bar .menu img{
+        width: 25px;
+        cursor: pointer;
     }
 
     header .nav-bar ul a{
@@ -37,7 +68,7 @@
 
     header .nav-bar ul{
         display: flex;
-        margin-right: 20px;
+        gap: 10px;
     }
 
     header .nav-bar p {

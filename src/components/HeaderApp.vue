@@ -1,7 +1,10 @@
 <template>
     <header>
         <div class="nav-bar">
-            <p>logo</p>
+            <div class="logo">
+                <img src="/src/assets/image 47.png" alt="logo">
+                <p>Ifood_Social</p>
+            </div>
             <ul>
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/login">Login</RouterLink>
@@ -19,6 +22,7 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        background-color: #EFEFE7;
     }
 
     header {
@@ -37,6 +41,17 @@
         box-sizing: border-box;
     }
 
+    header .nav-bar .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 11px;
+    }
+
+    header .nav-bar .logo img{
+        width: 40px;
+    }
+
     header .nav-bar ul a{
         color: white;
         text-decoration: none;
@@ -46,8 +61,6 @@
     header .nav-bar ul a:hover {
         text-decoration: underline;
     }
-
-
 
     header .nav-bar ul{
         display: flex;
