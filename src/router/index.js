@@ -4,6 +4,7 @@ import Home from '../views/HomeView.vue'
 import Principal from '../views/PrincipalView.vue'
 import CadastroView from '../views/CadastroView.vue'
 import RegistroProdutoView from '../views/RegistroProdutoView.vue'
+import EditarProdutoView from '../views/EditarProdutoView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/registrar',
       name: 'Registrar',
       component: RegistroProdutoView
+    },
+    {
+      path: '/editar',
+      name: 'Editar',
+      component: EditarProdutoView
     },
   ]
 })

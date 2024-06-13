@@ -22,7 +22,7 @@ export default {
     <div class="container">
         <div >
             <div class="main-content">
-                <div class="titulo"><h3>Cadastrar Produtos</h3></div>
+                <div class="titulo"><h3>Editar Produtos</h3></div>
                 <div class="produtos-content">
 
                     <UploadImage />
@@ -57,7 +57,7 @@ export default {
                 <hr>
 
                 <div class="buttons">
-                    <RouterLink to="#"><button type="button">Cadastrar</button></RouterLink>
+                    <RouterLink to="#"><button type="button">Editar</button></RouterLink>
                 </div>
             </div>
         </div>  
@@ -86,7 +86,7 @@ export default {
         width: 100%;
         height: 100%;
         padding: 20px;
-        background: linear-gradient(to right, #feb47b, #FA6A2E, #feb47b); 
+        background: linear-gradient(to right, #fe957b, #8A2D21, #fe957b); 
     }
     .main-content{
         display: flex;
@@ -103,7 +103,7 @@ export default {
         border: 3px solid #8A2D21;
         border-radius: 30px;
         margin: 20px 100px;
-        padding: 10px 80px;
+        padding: 10px 100px;
         font-size: 30px;
         color: rgb(0, 0, 0);
     }
