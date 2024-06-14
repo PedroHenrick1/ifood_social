@@ -1,5 +1,24 @@
-<script setup>
-import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      cliente: null
+    };
+  },
+  async created() {
+    const clienteID = this.$route.query.clienteID;
+    if (clienteID) {
+      try {
+        const response = await axios.get(`http://localhost:5000/cliente/${clienteID}`);
+        this.cliente = response.data;
+      } catch (err) {
+        console.error("Erro ao buscar os dados do cliente:", err);
+      }
+    }
+  }
+};
 </script>
 
 <template>
@@ -17,7 +36,7 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
                     </div>
 
                     <div class="dados-usuario">
-                        <p>Pedro Henrick</p>
+                        <p>{{ cliente ? cliente.NOME_CLIENTE : "" }}</p>
                         <p>Vendedor</p>
                     </div>
 

@@ -1,91 +1,160 @@
 <template>
-    <body>
-    <div class="form-container">
-        <h1>Cadastro de Clientes</h1>
-        <form action="/submit-your-form-handler" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required>
-            
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required>
-            
-            <button type="submit">Cadastrar</button>
-        </form>
+    <div>
+      <div class="field">
+        <label class="label">Código do Cliente</label>
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            placeholder="Código do Cliente"
+            v-model="COD_CLIENTE"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Nome</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Nome"
+            v-model="NOME_CLIENTE"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Endereço</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Endereço"
+            v-model="DCR_ENDERECO"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Complemento</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Complemento"
+            v-model="DCR_COMPLEMENTO"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">CEP</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="CEP"
+            v-model="NUM_CEP"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Código da Cidade</label>
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            placeholder="Código da Cidade"
+            v-model="COD_CIDADE"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Código do Bairro</label>
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            placeholder="Código do Bairro"
+            v-model="COD_BAIRRO"
+          />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Código da Localidade</label>
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            placeholder="Código da Localidade"
+            v-model="COD_LOCALIDADE"
+          />
+        </div>
+      </div>
+  
+      <div class="control">
+        <button class="button is-success" @click="saveCliente">Salvar</button>
+      </div>
     </div>
-</body>
-</template>
+  </template>
+  
+  <script>
+  //import axios
+  import axios from "axios";
+  export default {
+    data() {
+      return {
+        COD_CLIENTE: "",
+        NOME_CLIENTE: "",
+        DCR_ENDERECO: "",
+        DCR_COMPLEMENTO: "",
+        NUM_CEP: "",
+        COD_CIDADE: "",
+        COD_BAIRRO: "",
+        COD_LOCALIDADE: ""
+      };
+    },
+    methods: {
+      //create new client
+      async saveCliente() {
+        try {
+          await axios.post("http://localhost:5000/creatCliente", {
+            COD_CLIENTE: this.COD_CLIENTE,
+            NOME_CLIENTE: this.NOME_CLIENTE,
+            DCR_ENDERECO: this.DCR_ENDERECO,
+            DCR_COMPLEMENTO: this.DCR_COMPLEMENTO,
+            NUM_CEP: this.NUM_CEP,
+            COD_CIDADE: this.COD_CIDADE,
+            COD_BAIRRO: this.COD_BAIRRO,
+            COD_LOCALIDADE: this.COD_LOCALIDADE
+          });
+          const clienteID = this.COD_CLIENTE; // Dependendo de como seu backend retorna o ID do cliente
+          // Reset form fields
+          this.COD_CLIENTE = "";
+          this.NOME_CLIENTE = "";
+          this.DCR_ENDERECO = "";
+          this.DCR_COMPLEMENTO = "";
+          this.NUM_CEP = "";
+          this.COD_CIDADE = "";
+          this.COD_BAIRRO = "";
+          this.COD_LOCALIDADE = "";
 
-<style scoped>
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
-.form-container {
-    width: 100%;
-    max-width: 400px;
-    background: #790e00de;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 5px 10px rgb(99, 99, 98);
-}
-
-h1 {
-    color: #ffffff;
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-label {
-    color: #ffffff;
-    margin-top: 10px;
-    margin-bottom: 5px; 
-    align-self: center; 
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    width: 75%; 
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    align-self: center; 
-}
-
-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    width: 50%; 
-    align-self: center;
-}
-
-button:hover {
-    color: #000000;
-}
-
-</style>
+          
+          // Navigate to another page or give feedback to the user
+          this.$router.push({path:"/principal", query:{clienteID}});
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  /* Add your styles here */
+  </style>

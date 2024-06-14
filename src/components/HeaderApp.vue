@@ -5,7 +5,7 @@
             <ul>
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/login">Login</RouterLink>
-                <RouterLink to="/">Cadastro</RouterLink>
+                <RouterLink to="/cadastro">Cadastro</RouterLink>
                 <RouterLink to="/">Contato</RouterLink>
             </ul>
         </div>
