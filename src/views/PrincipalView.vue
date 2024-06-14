@@ -65,11 +65,10 @@ export default {
                 </div>
 
                 <div class="buttons">
-                    <RouterLink to="#"><button type="button">Registrar Produto</button></RouterLink>
+                    <RouterLink to="/registrarProduto"><button type="button">Registrar Produto</button></RouterLink>
                     <RouterLink to="#"><button type="button">Editar Produto</button></RouterLink>
                 </div>
             </div>
-
             <hr>
 
         </div>
