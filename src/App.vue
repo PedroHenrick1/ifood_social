@@ -7,11 +7,16 @@ import NavBarPrincipal from './components/NavBarPrincipal.vue'
 <template>
     <div id="app">
         <header>
-            <nav v-if="$route.path !== '/' ">
-                <NavBarPrincipal/>
+            <nav v-if="$route.path == '/' ">
+                <!-- <NavBarPrincipal/> -->
+                <HeaderApp/>
                 
             </nav>
-            <nav v-if="$route.path !== '/principal' ">
+            <nav v-if="$route.path == '/principal' ">
+                <NavBarPrincipal/>
+            </nav>
+
+            <nav v-if="$route.path == '/cadastro' ">
                 <HeaderApp/>
             </nav>
 

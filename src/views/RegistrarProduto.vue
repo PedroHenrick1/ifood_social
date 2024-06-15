@@ -29,18 +29,6 @@
         </div>
   
         <div class="field">
-          <label class="label">Imagem do Produto (URL)</label>
-          <div class="control">
-            <input
-              class="input"
-              type="url"
-              v-model="IMG_PRODUTO"
-              placeholder="URL da Imagem do Produto"
-            />
-          </div>
-        </div>
-  
-        <div class="field">
           <label class="label">Valor do Produto</label>
           <div class="control">
             <input
@@ -81,7 +69,7 @@
           </div>
         </div>
   
-        <div class="field">
+        <!-- <div class="field">
           <label class="label">Empreendimento</label>
           <div class="control">
             <div class="select">
@@ -93,7 +81,7 @@
                 </select>
             </div>
           </div>
-        </div>
+        </div> -->
   
         <div class="control">
           <button class="button is-success" type="submit">Salvar</button>
@@ -129,10 +117,11 @@
             VLR_PRODUTO: this.VLR_PRODUTO,
             FLAG_DISPONIVEL: this.FLAG_DISPONIVEL,
             COD_CATEGORIA: this.COD_CATEGORIA,
-            COD_EMPREEDIMENTO: this.COD_EMPREEDIMENTO 
+            COD_EMPREEDIMENTO: this.$route.query.cod_empreendimento
         });
 
-        const produtoID = this.COD_PRODUTO;
+        const cod_funcionario = this.$route.query.id;
+        const nome_empreendimento = this.$route.query.nome_empreendimento;
         // Reset form fields
         this.COD_PRODUTO = "";
         this.DCR_PRODUTO = "";
@@ -143,7 +132,7 @@
         this.COD_EMPREEDIMENTO = "";
 
         alert('Criado com sucesso');
-        this.$router.push({ path: "/principal", query: { produtoID } });
+        this.$router.push({ path: "/principal", query: { cod_funcionario, nome_empreendimento } });
         } catch (err) {
           console.log(err);
         }

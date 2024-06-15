@@ -1,9 +1,8 @@
 <template>
     <header>
         <div class="nav-bar">
-            <p>logo</p>
+            <img src="../assets/image 47.png" alt="">
             <ul>
-                <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/">Sair</RouterLink>
             </ul>
         </div>
@@ -15,6 +14,12 @@
 
     header {
         margin-bottom: 20px;
+    }
+
+    div .nav-bar img {
+        width: 60px;
+        height: 60px;
+        margin-left: 10px;
     }
 
     header .nav-bar{

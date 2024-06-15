@@ -4,15 +4,25 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      cliente: null
+      funcionario: null,
+      empreendimento: this.$route.query.nome_empreendimento,
+
     };
   },
+  methods: {
+    RedirectRegistrar() {
+        const id  = this.$route.query.cod_funcionario;
+        const cod_empreendimento = this.$route.query.cod_empreendimento;
+        const nome_empreendimento = this.$route.query.nome_empreendimento;
+        this.$router.push({path:"/registrarProduto", query:{id, cod_empreendimento, nome_empreendimento}});
+    }
+  },
   async created() {
-    const clienteID = this.$route.query.clienteID;
+    const clienteID = this.$route.query.cod_funcionario;
     if (clienteID) {
       try {
-        const response = await axios.get(`http://localhost:5000/cliente/${clienteID}`);
-        this.cliente = response.data;
+        const response = await axios.get(`http://localhost:5000/funcionario/${clienteID}`);
+        this.funcionario = response.data;
       } catch (err) {
         console.error("Erro ao buscar os dados do cliente:", err);
       }
@@ -25,59 +35,27 @@ export default {
 
     <div class="container">
         <div class="main-content">
-            <nav>
-                <div class="logo">
-                    <img src="../assets/image 47.png" alt="logo">
-                    <h1>Ifood social</h1>
-                </div>
-                <div class="dados">
-                    <div class="foto-perfil">
-                        <img src="../assets/foto_perfil.png" alt="perfil">
-                    </div>
-
-                    <div class="dados-usuario">
-                        <p>{{ cliente ? cliente.NOME_CLIENTE : "" }}</p>
-                        <p>Vendedor</p>
-                    </div>
-
-                    <div class="menu">
-                        <RouterLink to="#"><img src="../assets/menu.png" alt="menu"></RouterLink>
-                    </div>
-                </div>
-            </nav>
-            <div>
-                <h3>Meus Produtos</h3>
-                <div class="produtos-content">
-                    <div class="produtos">
-                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
-                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
-                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
-                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
-                        <div><img src="../assets/hamburguer.jpg" alt="comida"></div>
-                    </div>
-
-                    <select name="select" id="seus-produtos">
-                        <option value="" selected>Seus produtos</option>
-                        <option value="produto1">produto1</option>
-                        <option value="produto2">produto2</option>
-                        <option value="produto3">produto3</option>
-                    </select>
-                </div>
-
-                <div class="buttons">
-                    <RouterLink to="/registrarProduto"><button type="button">Registrar Produto</button></RouterLink>
-                    <RouterLink to="#"><button type="button">Editar Produto</button></RouterLink>
+        <nav>
+            <div class="logo">
+            <img src="../assets/image 47.png" alt="logo" />
+            <h1>{{ empreendimento }}</h1>
+            </div>
+            <div class="dados">
+                <div class="dados-usuario">
+                    <p>{{ funcionario ? funcionario.NOME_FUNCIONARIO : "" }}</p>
                 </div>
             </div>
-            <hr>
-
+        </nav>
+        <div class="dados_totais">
+            <h3>Área de registro de Produtos</h3>
+            <p>Nesta página, você pode apertar em "Registrar Produtos" onde você poderá registrar produtos para o seu empreendimento. Ao entrar na página, você encontrará um formulário simples onde você pode inserir os detalhes do produto, incluindo o nome, valor do produto e outras coisas mais.</p>
+            <div class="buttons">
+                <button type="button" @click="RedirectRegistrar">Registrar Produto</button>
+            </div>
         </div>
-        
-
+        <hr />
+        </div>
     </div>
-    <nav>
-
-    </nav>
 </template>
 
 <script>
@@ -140,9 +118,31 @@ export default {
         align-items: center;
     }
 
+    div .dados_totais {
+        display: flex;
+
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    div .dados_totais h3{
+        display: flex;
+        position: relative;
+        right: 50px;
+        justify-content: center;
+    }
+
+    div .dados_totais p {
+        display: flex;
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
     nav .dados-usuario p{
         display: flex;
         flex-direction: column;
+        margin-right: 30px;
     }
     nav .menu {
         margin-right: 10px;
