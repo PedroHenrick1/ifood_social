@@ -27,7 +27,7 @@ export default {
 
                     <UploadImage />
                     
-                    <input type="text" placeholder="Código">
+                    <input type="number" placeholder="Código">
 
                     <input type="text" placeholder="Descrição">
 
@@ -135,12 +135,16 @@ export default {
     .produtos-content select {
         width: 56.7%;
         height: 40px;
-        background: #fa6b2e7a;
+        background: #fa6b2e17;
         color: #6e6e7a;
         border-radius: 10px;
         padding: 0 20px;
-        border: none;
+        border: 2px solid #8a2d21ba;
         cursor: pointer;
+    }
+
+    .produtos-content select:hover {
+        background: #fa6b2e46;
     }
 
     .buttons {
@@ -169,11 +173,15 @@ export default {
     .produtos-content input{
         width: 50%;
         height: 40px;
-        background: #fa6b2e7a;
+        background: #fa6b2e17;
         padding: 0 20px;
         color: #6e6e7a;
         border-radius: 10px;
-        border: none;
+        border: 2px solid #8a2d21ba;
+    }
+
+    .produtos-content input:hover{
+        background: #fa6b2e46;
     }
 
     .content-checkbox{

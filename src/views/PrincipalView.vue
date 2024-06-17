@@ -9,7 +9,7 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
             <nav>
                 <div class="logo">
                     <img src="../assets/image 47.png" alt="logo">
-                    <h1>Ifood social</h1>
+                    <h1>Ifood_Social</h1>
                 </div>
                 <div class="dados">
                     <div class="foto-perfil">
@@ -79,20 +79,22 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         display: flex;
         justify-content: center;
         align-items: center;
+        background: #790e00c1;
         width: 100%;
         height: 100%;
+        padding: 20px 0;
     }
     .main-content{
         border-radius: 10px;
-        width: 800px;
+        width: 90%;
         height: 700px;
-        background: #790e00de;
+        background: #ffffffe7;
     }
     nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #d9d9db;
+        padding: 8px 0;
     }
 
     nav .logo {
@@ -101,12 +103,11 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         align-items: center;
     }
     nav .logo h1{
-        font-size: 50px;
-        text-decoration: underline;
+        font-size: 30px;
     }
     nav .logo img {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         margin-left: 10px;
     }
 
@@ -125,6 +126,7 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
     nav .dados-usuario p{
         display: flex;
         flex-direction: column;
+        margin: 10px 0 0 0;
     }
     nav .menu {
         margin-right: 10px;
@@ -143,7 +145,7 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
     h3 {
         margin-left: 90px;
         font-size: 30px;
-        color: white;
+        color: rgb(62, 62, 62);
     }
 
     .produtos {
@@ -170,12 +172,15 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
         width: 75%;
         height: 40px;
         margin-top: 60px;
-        background: #d9d9db;
+        background: #fa6b2e17;
         color: #6e6e7a;
         border-radius: 10px;
-        border: none;
-
+        border: 2px solid #8a2d21ba;
         cursor: pointer;
+    }
+
+    .produtos-content select:hover {
+        background: #fa6b2e46;
     }
 
     .buttons {
@@ -188,10 +193,10 @@ import NavBarPrincipal from '@/components/NavBarPrincipal.vue';
     .buttons button {
         color: white;
         border-radius: 10px;
-        width: 200px;
+        width: 250px;
         height: 50px;
         border: none;
-        background: rgba(75, 31, 154, 1);
+        background: #8a2d21;
         cursor: pointer;
         transition: 0.3s ease-in-out;
     }

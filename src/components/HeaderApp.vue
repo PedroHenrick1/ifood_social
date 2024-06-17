@@ -39,6 +39,7 @@
         background: black;
         padding: 0 20px;
         box-sizing: border-box;
+        border-radius: 10px 10px 0 0;
     }
 
     header .nav-bar .logo{
@@ -50,6 +51,7 @@
 
     header .nav-bar .logo img{
         width: 40px;
+        cursor: pointer;
     }
 
     header .nav-bar ul a{

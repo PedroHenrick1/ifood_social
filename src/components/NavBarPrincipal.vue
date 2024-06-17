@@ -30,6 +30,7 @@
         height: 75px;
         background: black;
         padding: 0 20px;
+        border-radius: 10px 10px 0 0;
     }
 
     header .nav-bar .logo{
